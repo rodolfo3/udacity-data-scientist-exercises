@@ -32,6 +32,13 @@ def avg_medal_count():
                             'bronze': Series(bronze)}
     df = DataFrame(olympic_medal_counts)
 
-    # YOUR CODE HERE
+    earned_medal = df[df.gold + df.silver + df.bronze > 0]
+    medals = earned_medal[['gold', 'silver', 'bronze']]
+
+    avg_medal_count = medals.apply(numpy.average)
 
     return avg_medal_count
+
+
+if __name__ == '__main__':
+    print(avg_medal_count())
