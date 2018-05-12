@@ -29,6 +29,13 @@ def points():
     silver = [11, 5, 10, 7, 7, 6, 3, 0, 8, 4, 1, 4, 3, 7, 4, 2, 4, 3, 1, 0, 0, 2, 2, 2, 1, 0]
     bronze = [9, 10, 5, 12, 9, 5, 2, 1, 5, 7, 1, 2, 2, 6, 2, 4, 3, 1, 2, 1, 0, 6, 2, 1, 0, 1]
 
-    # YOUR CODE HERE
+    points_per_medal = [4, 2, 1]
+
+    points = numpy.dot([4, 2, 1], [gold, silver, bronze])
+
+    olympic_points_df = DataFrame({
+        'country_name': countries,
+        'points': points,
+    })
 
     return olympic_points_df
